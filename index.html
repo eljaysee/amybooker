@@ -1,0 +1,1616 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efdf">
+  <meta name="description" content="A little field guide to planning our next date. Geoff's approval pending.">
+  <meta property="og:title" content="A Little Field Guide to Us">
+  <meta property="og:description" content="Choose a few things to do, find a day, and see what happens. Geoff permitting.">
+  <title>A Little Field Guide to Us</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f2efdf;
+      --paper-dark: #e7e5d2;
+      --card: #faf8ee;
+      --forest: #2c4433;
+      --moss: #687b4d;
+      --olive: #8a965f;
+      --sage: #dce3cc;
+      --sage-dark: #c8d3b1;
+      --ink: #293329;
+      --muted: #737966;
+      --line: #d3d5c2;
+      --rust: #b85e47;
+      --rust-pale: #f1ded2;
+      --white: #fffdf5;
+      --sans: "DM Sans", system-ui, sans-serif;
+      --mono: "DM Mono", ui-monospace, monospace;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 20px;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid var(--moss);
+      outline-offset: 3px;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(100% - 32px, 900px);
+      margin-inline: auto;
+    }
+
+    .mono { font-family: var(--mono); }
+
+    .eyebrow {
+      margin: 0;
+      color: var(--moss);
+      font: 500 10px/1.7 var(--mono);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .muted { color: var(--muted); }
+
+    /* Header */
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 64px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--forest);
+      font: 500 10px var(--mono);
+      letter-spacing: .04em;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 30px;
+      height: 30px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--forest);
+      color: var(--paper);
+      font-size: 16px;
+    }
+
+    .status {
+      color: var(--muted);
+      font: 9px var(--mono);
+      text-align: right;
+    }
+
+    /* Intro */
+
+    .hero {
+      padding-top: 40px;
+      padding-bottom: 35px;
+    }
+
+    .hero-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    /* .specimen-number {
+      flex-shrink: 0;
+      padding: 7px 9px;
+      border: 1px solid var(--line);
+      color: var(--moss);
+      font: 10px var(--mono);
+    } */
+
+    /* .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 22px 0;
+    } */
+
+    .tag {
+      padding: 7px 9px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font: 9px var(--mono);
+      letter-spacing: .02em;
+    }
+
+    .tag.green {
+      border-color: var(--sage-dark);
+      background: var(--sage);
+      color: var(--forest);
+    }
+
+    h1 {
+      max-width: 750px;
+      margin: 14px 0 18px;
+      color: var(--forest);
+      font-size: clamp(3.1rem, 13vw, 6.8rem);
+      font-weight: 700;
+      line-height: .91;
+      letter-spacing: -.085em;
+    }
+
+    h1 span { color: var(--moss); }
+
+    .hero-copy {
+      max-width: 550px;
+      margin: 0;
+      color: #59614f;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .hero-note {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+      margin-top: 24px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      background: var(--card);
+    }
+
+    .hero-note-icon { font-size: 21px; }
+
+    .hero-note p {
+      margin: 0;
+      color: #59614f;
+      font-size: 12px;
+      line-height: 1.65;
+    }
+
+    .hero-note strong { color: var(--forest); }
+
+    /* Sections */
+
+    .section {
+      padding: 32px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-title {
+      margin: 9px 0 11px;
+      color: var(--forest);
+      font-size: clamp(2rem, 8vw, 3.1rem);
+      font-weight: 700;
+      line-height: .99;
+      letter-spacing: -.065em;
+    }
+
+    .section-copy {
+      max-width: 580px;
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    /* Activity picker */
+
+    .mission-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px;
+    }
+
+    .mission-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 9px;
+      min-width: 0;
+      min-height: 150px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      background: var(--card);
+      color: var(--ink);
+      text-align: left;
+      transition: background .15s, border-color .15s;
+    }
+
+    .mission-card:hover {
+      border-color: var(--moss);
+    }
+
+    .mission-card[aria-pressed="true"] {
+      border-color: var(--moss);
+      background: var(--sage);
+      box-shadow: inset 0 0 0 1px var(--moss);
+    }
+
+    .mission-card[aria-pressed="true"]::after {
+      content: "✓";
+      position: absolute;
+      top: 10px;
+      right: 11px;
+      display: grid;
+      width: 21px;
+      height: 21px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--forest);
+      color: var(--white);
+      font-size: 12px;
+    }
+
+    .mission-icon {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--sage);
+      font-size: 21px;
+    }
+
+    .mission-card[aria-pressed="true"] .mission-icon {
+      background: var(--white);
+    }
+
+    .mission-name {
+      padding-right: 20px;
+      color: var(--forest);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .mission-desc {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.55;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 47px;
+      padding: 12px 16px;
+      border: 1px solid var(--forest);
+      border-radius: 4px;
+      background: var(--forest);
+      color: var(--white);
+      font: 500 10px var(--mono);
+      letter-spacing: .015em;
+      text-align: center;
+      transition: background .15s, color .15s;
+    }
+
+    .btn:hover {
+      background: var(--moss);
+      border-color: var(--moss);
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--forest);
+    }
+
+    .btn.secondary:hover {
+      background: var(--sage);
+      border-color: var(--moss);
+    }
+
+    .btn:disabled {
+      cursor: wait;
+      opacity: .6;
+    }
+
+    /* Random idea */
+
+    .random-box {
+      margin-top: 14px;
+      padding: 18px;
+      border: 1px solid var(--sage-dark);
+      border-radius: 5px;
+      background: var(--sage);
+    }
+
+    .random-box h3 {
+      margin: 8px 0;
+      color: var(--forest);
+      font-size: 23px;
+      line-height: 1.12;
+      letter-spacing: -.04em;
+    }
+
+    .random-box p:last-child {
+      margin-bottom: 0;
+      color: #59614f;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    /* Date choices */
+
+    .date-modes {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin: 18px 0;
+    }
+
+    .mode { position: relative; }
+
+    .mode input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+    }
+
+    .mode span {
+      display: flex;
+      min-height: 83px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 5px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: var(--card);
+      color: var(--forest);
+      text-align: center;
+      font-size: 11px;
+      line-height: 1.4;
+      cursor: pointer;
+    }
+
+    .mode span b {
+      font-size: 21px;
+      font-weight: 400;
+    }
+
+    .mode input:checked + span {
+      border-color: var(--moss);
+      background: var(--sage);
+      box-shadow: inset 0 0 0 1px var(--moss);
+    }
+
+    .mode input:focus-visible + span {
+      outline: 2px solid var(--moss);
+      outline-offset: 3px;
+    }
+
+    /* Form fields */
+
+    .field {
+      display: block;
+      min-width: 0;
+      margin-top: 16px;
+    }
+
+    .field-label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--forest);
+      font: 10px/1.6 var(--mono);
+      letter-spacing: .025em;
+      text-transform: uppercase;
+    }
+
+    .control {
+      display: block;
+      width: 100%;
+      min-height: 48px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: var(--card);
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    .control:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+      background: var(--paper-dark);
+    }
+
+    select.control { cursor: pointer; }
+
+    textarea.control {
+      min-height: 94px;
+      resize: vertical;
+    }
+
+    .field-help {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    /* Summary */
+
+    .summary {
+      padding: 17px;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      background: var(--card);
+    }
+
+    .summary-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 13px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .summary-top h3 {
+      margin: 0;
+      color: var(--forest);
+      font: 500 10px var(--mono);
+      letter-spacing: .02em;
+    }
+
+    .summary-count {
+      flex-shrink: 0;
+      color: var(--moss);
+      font: 10px var(--mono);
+    }
+
+    .summary-empty {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .summary-list {
+      display: grid;
+      gap: 10px;
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .summary-list li {
+      display: flex;
+      gap: 9px;
+      align-items: flex-start;
+      color: var(--ink);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .summary-list li::before {
+      content: "✳";
+      color: var(--moss);
+    }
+
+    .summary-meta {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .summary-meta div {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .summary-meta span:first-child { color: var(--muted); }
+    .summary-meta span:last-child {
+      color: var(--forest);
+      text-align: right;
+    }
+
+    /* Geoff */
+
+    .geoff-box {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 13px;
+      align-items: start;
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      background: var(--paper-dark);
+    }
+
+    .geoff-face {
+      display: grid;
+      width: 54px;
+      height: 54px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--sage);
+      font-size: 28px;
+    }
+
+    .geoff-box h3 {
+      margin: 2px 0 6px;
+      color: var(--forest);
+      font-size: 15px;
+    }
+
+    .geoff-box p {
+      margin: 0;
+      color: #59614f;
+      font-size: 12px;
+      line-height: 1.65;
+    }
+
+    /* Submission */
+
+    .submit-wrap { margin-top: 16px; }
+    .submit-wrap .btn { width: 100%; min-height: 54px; }
+
+    .privacy-note {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    .form-status {
+      display: none;
+      margin-top: 14px;
+      padding: 16px;
+      border: 1px solid var(--moss);
+      border-radius: 5px;
+      background: var(--sage);
+    }
+
+    .form-status.visible { display: block; }
+
+    .form-status.error {
+      border-color: var(--rust);
+      background: var(--rust-pale);
+    }
+
+    .form-status h3 {
+      margin: 0 0 7px;
+      color: var(--forest);
+      font-size: 16px;
+    }
+
+    .form-status p {
+      margin: 0;
+      color: #59614f;
+      font-size: 12px;
+      line-height: 1.7;
+      overflow-wrap: anywhere;
+    }
+
+    .status-actions { margin-top: 12px; }
+
+    /* Footer and small notifications */
+
+    .footer {
+      padding: 25px 0 calc(30px + env(safe-area-inset-bottom));
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font: 9px/2 var(--mono);
+    }
+
+    .footer strong {
+      color: var(--forest);
+      font-weight: 500;
+    }
+
+    .toast {
+      position: fixed;
+      z-index: 50;
+      left: 16px;
+      right: 16px;
+      bottom: calc(14px + env(safe-area-inset-bottom));
+      max-width: 520px;
+      margin: auto;
+      padding: 14px 16px;
+      border: 1px solid var(--moss);
+      border-radius: 5px;
+      background: var(--forest);
+      color: var(--white);
+      font: 11px/1.6 var(--mono);
+      opacity: 0;
+      transform: translateY(8px);
+      pointer-events: none;
+      transition: opacity .2s, transform .2s;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hidden { display: none !important; }
+
+    .shake { animation: shake .25s ease; }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      30% { transform: translateX(-3px); }
+      70% { transform: translateX(3px); }
+    }
+
+    @media (min-width: 700px) {
+      .wrap { width: min(100% - 48px, 900px); }
+      .hero { padding-top: 65px; padding-bottom: 48px; }
+      .hero-copy { font-size: 16px; }
+      .section { padding-block: 45px; }
+      .mission-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .mission-card { min-height: 155px; padding: 17px; }
+      .section-title { font-size: 3.1rem; }
+      .form-layout {
+        display: grid;
+        grid-template-columns: 1fr .82fr;
+        gap: 25px;
+        align-items: start;
+      }
+      .form-layout .summary-sticky {
+        position: sticky;
+        top: 16px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .wrap { width: calc(100% - 24px); }
+      .mission-grid { gap: 7px; }
+      .mission-card { padding: 11px; min-height: 150px; }
+      .mission-name { font-size: 12px; }
+      .mission-desc { font-size: 10px; }
+      .two-col { grid-template-columns: 1fr; gap: 0; }
+      .btn { padding-inline: 11px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar wrap">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">✳</span>
+      <span>TIME WASTER 3000</span>
+    </a>
+    <span class="status">WIP, naturally</span>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <div class="hero-top">
+        <p class="eyebrow">I DON'T HAVE YOUR ROTA SO I MADE THIS LMAO</p>
+        <!-- <span class="specimen-number">№ 0264</span> -->
+      </div>
+
+      <!-- <div class="hero-tags">
+        <span class="tag green">Sheffield or Chesterfield</span>
+        <span class="tag">Low-pressure plans</span>
+        <span class="tag">Geoff permitting</span>
+      </div> -->
+
+      <h1>What shall<br>we <span>get up to?</span></h1>
+
+      <p class="hero-copy">
+        <!-- Pick a few things that sound nice, find a day that works,
+        and we'll figure the rest out as we go. Nothing too serious.
+        Snacks are strongly encouraged. -->
+        Let me know when you get some free time, and pick an activity if you fancy it lmao >:)
+      </p>
+
+      <div class="hero-note">
+        <span class="hero-note-icon" aria-hidden="true">🍄</span>
+        <p>
+          <strong>A note from a woke retard:</strong>
+          this is just a little way to get an idea of when you're free / what the vibe is.
+          No need to stick to it:)
+        </p>
+      </div>
+    </section>
+
+    <form id="missionForm"
+      action="https://formspree.io/f/xyekpbgj"
+      method="POST"
+      novalidate>
+
+      <input type="hidden" name="_subject" value="A little date idea">
+      <input type="hidden" name="form_source" value="A Little Field Guide to Us">
+
+      <section class="section" id="missions">
+        <div class="wrap">
+          <p class="eyebrow">Whatcha wanna do?</p>
+          <h2 class="section-title">Pick your<br><span>vibe!</span></h2>
+          <p class="section-copy">
+            You can pick as few or as many as you'd like! We can always change our minds halfway through lmao 
+          </p>
+
+          <div class="mission-grid" id="missionGrid">
+            <button class="mission-card" type="button"
+              data-mission="Takeaway in bed" aria-pressed="false">
+              <span class="mission-icon" aria-hidden="true">🍜</span>
+              <span class="mission-name">Takeaway & sofa rotting</span>
+              <span class="mission-desc">Let's order too much food and pretend to we're going to share >:)</span>
+            </button>
+
+            <button class="mission-card" type="button"
+              data-mission="COD Zombies" aria-pressed="false">
+              <span class="mission-icon" aria-hidden="true">🧟</span>
+              <span class="mission-name">COD Zombies</span>
+              <span class="mission-desc">Round 20 incoming fr</span>
+            </button>
+
+            <button class="mission-card" type="button"
+              data-mission="Horror movie night" aria-pressed="false">
+              <span class="mission-icon" aria-hidden="true">🎬</span>
+              <span class="mission-name">Horror film night</span>
+              <span class="mission-desc">Let's watch something spooky and get probably way too blazed for it?</span>
+            </button>
+
+            <button class="mission-card" type="button"
+              data-mission="Perle Rouge operations" aria-pressed="false">
+              <span class="mission-icon" aria-hidden="true">🍷</span>
+              <span class="mission-name">Perle Rouge</span>
+              <span class="mission-desc">IOU 1 (one) bottle of wine ;)</span>
+            </button>
+
+            <button class="mission-card" type="button"
+              data-mission="Sheffield wander" aria-pressed="false">
+              <span class="mission-icon" aria-hidden="true">🌿</span>
+              <span class="mission-name">A wander</span>
+              <span class="mission-desc">Just go for a walk and see what happens, maybe find a nice bleed out spot?</span>
+            </button>
+
+            <button class="mission-card" type="button"
+              data-mission="Beetle spotting / weird field trip" aria-pressed="false">
+              <span class="mission-icon" aria-hidden="true">🪲</span>
+              <span class="mission-name">Something weird & miscellaneous</span>
+              <span class="mission-desc">Wander round Kelham Flea? Bug hunt? Mushroom spotting?</span>
+            </button>
+
+            <button class="mission-card" type="button"
+              data-mission="Twister and blanket shelter" aria-pressed="false">
+              <span class="mission-icon" aria-hidden="true">🌪️</span>
+              <span class="mission-name">Twister & snacks</span>
+              <span class="mission-desc">Still need to watch '96 & 2 together :)</span>
+            </button>
+
+            <button class="mission-card" type="button"
+              data-mission="Cosy sofa time" aria-pressed="false">
+              <span class="mission-icon" aria-hidden="true">🛏️</span>
+              <span class="mission-name">Literally just getting into bed</span>
+              <span class="mission-desc">Probably the best option</span>
+            </button>
+
+            <!-- <button class="mission-card" type="button"
+              data-mission="IASIP and snacks" aria-pressed="false">
+              <span class="mission-icon" aria-hidden="true">📺</span>
+              <span class="mission-name">It & snacks</span>
+              <span class="mission-desc">Watch terrible people do terrible things. A wholesome evening, really.</span>
+            </button> -->
+          </div>
+
+          <div class="button-row">
+            <button class="btn" type="button" id="randomMissionButton">
+            Random combo!
+            </button>
+            <button class="btn secondary" type="button" id="clearMissions">
+              Clear selections
+            </button>
+          </div>
+
+          <div class="random-box hidden" id="randomBox" aria-live="polite">
+            <p class="eyebrow">An idea has appeared</p>
+            <h3 id="randomMissionTitle">NOTHING GROWING YET</h3>
+            <p id="randomMissionMessage">
+              Give the little idea generator a go.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="date">
+        <div class="wrap">
+          <p class="eyebrow">Finding a day</p>
+          <h2 class="section-title">When are<br>you free?</h2>
+          <p class="section-copy">
+            Pick a day if you're free and wanna waste some time with me!
+          </p>
+
+          <div class="date-modes">
+            <label class="mode">
+              <input type="radio" name="dateMode" value="specific">
+              <span><b aria-hidden="true">📅</b>You've got a day in mind</span>
+            </label>
+            <label class="mode">
+              <input type="radio" name="dateMode" value="soon">
+              <span><b aria-hidden="true">🌱</b>Sometime soon</span>
+            </label>
+            <label class="mode">
+              <input type="radio" name="dateMode" value="surprise">
+              <span><b aria-hidden="true">🎲</b>I decide</span>
+            </label>
+          </div>
+
+          <label class="field" for="preferredDate">
+            <span class="field-label">Got a date in mind? · optional</span>
+            <input class="control" type="date" id="preferredDate"
+              name="preferredDate" disabled>
+          </label>
+
+          <p class="field-help" id="dateHelp">
+            Choose “You've got a day in mind” to use the calendar.
+            Got a day free? Let me know with this!
+          </p>
+
+          <div class="two-col">
+            <label class="field" for="timePreference">
+              <span class="field-label">What time are you thinking?</span>
+              <select class="control" id="timePreference" name="timePreference">
+                <option value="Flexible">Whenever</option>
+                <option value="Afternoon">Afternoon</option>
+                <option value="Evening">Evening</option>
+                <option value="Late night">Late night, ofc</option>
+              </select>
+            </label>
+
+            <label class="field" for="energy">
+              <span class="field-label">What's the vibe?</span>
+              <select class="control" id="energy" name="energy">
+                <option value="Cosy">Cosy night in</option>
+                <option value="Out and about">Get out for a bit</option>
+                <option value="Chaos">A bit of chaos</option>
+                <option value="Dealer's choice">Surprise me</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="field" for="location">
+            <span class="field-label">Where are we thinking?</span>
+            <select class="control" id="location" name="location">
+              <option value="Flexible">Wherever</option>
+              <option value="El">My place</option>
+              <option value="Amy">Your place (pending Geoff's approval, it's his gaff too)</option>
+              <option value="Out n about">Out n about</option>
+              <option value="Surprise me">Keep it a surprise</option>
+            </select>
+          </label>
+
+          <label class="field" for="notes">
+            <span class="field-label">Anything else? · optional</span>
+            <textarea class="control" id="notes" name="notes"
+              rows="3" maxlength="500"
+              placeholder="Snack requests, film ideas, things you fancy doing, Geoff's t&c's, etc"></textarea>
+          </label>
+        </div>
+      </section>
+
+      <section class="section" id="summary">
+        <div class="wrap">
+          <p class="eyebrow">Putting the plan together</p>
+          <h2 class="section-title">Our little plan</h2>
+          <p class="section-copy">
+            Here's what we've got so far<3
+          </p>
+
+          <div class="form-layout">
+            <div class="summary-sticky">
+              <div class="summary" aria-live="polite">
+                <div class="summary-top">
+                  <h3>THE PLAN SO FAR</h3>
+                  <span class="summary-count" id="summaryCount">00 SELECTED</span>
+                </div>
+
+                <div id="summaryContent" class="summary-empty">
+                  No plans yet, watch this space ig
+                </div>
+
+                <div class="summary-meta">
+                  <div><span>Day</span><span id="summaryDate">Not decided</span></div>
+                  <div><span>Time</span><span id="summaryTime">Whenever</span></div>
+                  <div><span>Vibe</span><span id="summaryEnergy">Cosy night in</span></div>
+                  <div><span>Where</span><span id="summaryLocation">Wherever</span></div>
+                </div>
+              </div>
+
+            <div>
+              <label class="field" for="senderName">
+                <span class="field-label">Who's making the suggestion?</span>
+                <input class="control" id="senderName" name="senderName"
+                  maxlength="80" placeholder="Amy (probably)"
+                  autocomplete="name">
+              </label>
+
+              <div class="submit-wrap">
+                <button class="btn" type="submit" id="submitButton">
+                  SEND IT
+                </button>
+              </div>
+
+              <p class="privacy-note">
+                hit the button to spam my emails lmfao
+              </p>
+
+              <div class="form-status" id="formStatus" role="status"
+                aria-live="polite" tabindex="-1">
+                <h3 id="formStatusTitle"></h3>
+                <p id="formStatusMessage"></p>
+                <div class="status-actions hidden" id="statusActions">
+                  <button class="btn secondary" type="button" id="copyProposal">
+                    Copy the plan
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      A VERY SMALL PLAN FOR TWO GAYLORDS<br>
+      <strong>JUST WANNA SPEND TIME W YOU LOL</strong>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const $ = (selector, root = document) => root.querySelector(selector);
+      const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+
+      const missionForm = $("#missionForm");
+      const preferredDate = $("#preferredDate");
+      const summaryContent = $("#summaryContent");
+      const formStatus = $("#formStatus");
+      const submitButton = $("#submitButton");
+      const missionCards = $$(".mission-card");
+      const randomBox = $("#randomBox");
+
+      let lastPlanIndex = -1;
+      let lastCopyText = "";
+      let toastTimer;
+
+    //   const FORMSPREE_ENDPOINT = "https://formspree.io/f/xyekpbgj"
+
+      function localDateString(date) {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, "0");
+        const day = String(date.getDate()).padStart(2, "0");
+        return `${year}-${month}-${day}`;
+      }
+
+      function formatDate(value) {
+        if (!value) return "Not decided";
+        const [year, month, day] = value.split("-").map(Number);
+        const date = new Date(year, month - 1, day);
+        return new Intl.DateTimeFormat("en-GB", {
+          weekday: "short",
+          day: "numeric",
+          month: "short",
+          year: "numeric"
+        }).format(date);
+      }
+
+      preferredDate.min = localDateString(new Date());
+
+      function selectedMissions() {
+        return missionCards
+          .filter(card => card.getAttribute("aria-pressed") === "true")
+          .map(card => card.dataset.mission);
+      }
+
+      function getDatePreference() {
+        return $('input[name="dateMode"]:checked')?.value || "";
+      }
+
+      function dateSummary() {
+        const mode = getDatePreference();
+
+        if (mode === "specific") {
+          return preferredDate.value ? formatDate(preferredDate.value) : "Choose a day";
+        }
+        if (mode === "soon") return "Sometime soon";
+        if (mode === "surprise") return "You decide 🎲";
+        return "Not decided";
+      }
+
+      function updateSummary() {
+        const selected = selectedMissions();
+
+        $("#summaryCount").textContent =
+          `${String(selected.length).padStart(2, "0")} SELECTED`;
+
+        summaryContent.replaceChildren();
+
+        if (!selected.length) {
+          summaryContent.className = "summary-empty";
+          summaryContent.textContent = "No plans yet, watch this space ig";
+        } else {
+          summaryContent.className = "";
+          const list = document.createElement("ul");
+          list.className = "summary-list";
+
+          selected.forEach(value => {
+            const item = document.createElement("li");
+            item.textContent = value;
+            list.appendChild(item);
+          });
+
+          summaryContent.appendChild(list);
+        }
+
+        $("#summaryDate").textContent = dateSummary();
+        $("#summaryTime").textContent = $("#timePreference").selectedOptions[0].textContent;
+        $("#summaryEnergy").textContent = $("#energy").selectedOptions[0].textContent;
+        $("#summaryLocation").textContent = $("#location").selectedOptions[0].textContent;
+      }
+
+      function hideFormStatus() {
+        formStatus.classList.remove("visible", "error");
+        $("#statusActions").classList.add("hidden");
+        $("#formStatusTitle").textContent = "";
+        $("#formStatusMessage").textContent = "";
+      }
+
+      function showFormStatus(title, message, isError = false, canCopy = false) {
+        formStatus.classList.toggle("error", isError);
+        formStatus.classList.add("visible");
+        $("#formStatusTitle").textContent = title;
+        $("#formStatusMessage").textContent = message;
+        $("#statusActions").classList.toggle("hidden", !canCopy);
+        formStatus.focus();
+      }
+
+      function setMode(mode) {
+        const specific = mode === "specific";
+        preferredDate.disabled = !specific;
+
+        if (!specific) preferredDate.value = "";
+
+        $("#dateHelp").textContent = specific
+          ? "Pick a day that works for you. We can always change it."
+          : mode === "soon"
+            ? "No need to pick a day just yet. We can figure it out together."
+            : mode === "surprise"
+              ? "Lovely. Someone else gets to make the decision for once."
+              : "Choose an option above if you have a preference.";
+
+        updateSummary();
+        hideFormStatus();
+      }
+
+      $$('input[name="dateMode"]').forEach(input => {
+        input.addEventListener("change", () => setMode(input.value));
+      });
+
+      missionCards.forEach(card => {
+        card.addEventListener("click", () => {
+            const pressed = card.getAttribute("aria-pressed") === "true";
+            card.setAttribute("aria-pressed", String(!pressed));
+
+            updateSummary();
+            updateSuggestionFromSelection();
+            hideFormStatus();
+        });
+        });
+
+      
+
+      // Every mission name must match its card's data-mission value.
+      const missionIdeas = [
+        {
+          title: "THE 4AM SPECIAL",
+          missions: ["COD Zombies", "Takeaway in bed"],
+          message: "'One more game' turns into twelve, the takeaway gets demolished, and suddenly it’s 4am:')"
+        },
+        {
+          title: "FAT FUCK FRIDAY",
+          missions: ["Cosy sofa time", "Takeaway in bed"],
+          message: "Eat takeaway ont sofa, migrate to the bed, and just veg tf out"
+        },
+        {
+          title: "TOUCHING GRASS SIDE QUEST",
+          missions: ["Sheffield wander", "Perle Rouge operations"],
+          message: "Wander with absolutely no plan, get too drunk, and pretend this was a carefully organised plan pmsl"
+        },
+        {
+          title: "TINY CREATURES, QUESTIONABLE FINDS",
+          missions: ["Beetle spotting / weird field trip", "Sheffield wander"],
+          message: "A little wander, a suspiciously interesting bug, and hopefully some other weird shit???"
+        },
+        {
+          title: "WEATHER WARNING: BLANKET SHELTER",
+          missions: ["Twister and blanket shelter", "Cosy sofa time"],
+          message: "Watch Twister. We're watching Twister."
+        },
+        {
+          title: "SPOOKY LITTLE NIGHT IN",
+          missions: ["Horror movie night", "Cosy sofa time"],
+          message: "Get the film on in the living room, order something deeply unnecessary, and scare tf outta ourselves"
+        },
+        {
+          title: "THE TWINK OLYMPICS",
+          missions: ["COD Zombies", "Cosy sofa time"],
+          message: "Competitive gaming w questionable tactics, and another round of you convincing yourself you're stronger than me;)"
+        },
+        {
+          title: "PERLE ROUGE: THE OUTSTANDING DEBT",
+          missions: ["Perle Rouge operations", "Cosy sofa time"],
+          message: "Address the outstanding bottle of wine situation, then return home for a sofa based debrief. Very serious situation ofc"
+        },
+        {
+          title: "NATURE DOCUMENTARY, BUT WEIRD",
+          missions: ["Beetle spotting / weird field trip", "Cosy sofa time"],
+          message: "Investigate bugs, specimens, and other lil freaks of nature, then get home and immediately become two decorative cushions ont sofa lmao"
+        },
+        {
+          title: "THE TWISTER DOUBLE FEATURE",
+          missions: ["Horror movie night", "Twister and blanket shelter"],
+          message: "Let's just fuckin send it and watch em both lol"
+        },
+        {
+          title: "THE IASIP INCIDENT",
+          missions: ["Cosy sofa time", "Takeaway in bed"],
+          message: "Stick IASIP on, get some scran in, and gradually lose the ability to contribute anything useful to society"
+        },
+        {
+          title: "A VERY SCIENTIFIC SLEEPOVER",
+          missions: ["COD Zombies", "Horror movie night"],
+          message: "Gaming, horror, snacks, n a refusal to call it a night, evidence suggests we'll be awake far too late"
+        }
+      ];
+
+      function getLocationNote() {
+        const location = $("#location").value;
+        const vibe = $("#energy").value;
+        const time = $("#timePreference").value;
+
+        const locationNotes = {
+        //   "El": "Your place it is. Prepare for an evening of questionable decisions",
+        //   "Amy": "Geoff's flat it is. Remember who's really in charge there",
+        //   "Out n about": "Out into the wild we go. The world ain't ready",
+        //   "Surprise me": "Location classified. The planning department has been compromised",
+        //   "Flexible": "Location undecided. We'll work it out as we go:))"
+        };
+
+        const vibeNotes = {
+        //   "Cosy": "Cosy mode: activated",
+        //   "Out and about": "Touching grass is apparently on the agenda",
+        //   "Chaos": "Chaos has been authorised. This may be a mistake",
+        //   "Dealer's choice": "Full creative control has been surrendered"
+        };
+
+        const timeNotes = {
+          "Afternoon": "A surprisingly civilised start.",
+          "Evening": "An evening of nonsense awaits.",
+          "Late night": "Sleep schedule status: in danger.",
+          "Flexible": ""
+        };
+
+        return [
+          locationNotes[location] || locationNotes.Flexible,
+          vibeNotes[vibe] || "",
+          timeNotes[time] || ""
+        ].filter(Boolean).join(" ");
+      }
+
+      function showIdea(idea) {
+        $("#randomMissionTitle").textContent = idea.title;
+        $("#randomMissionMessage").textContent =
+          `${idea.message} ${getLocationNote()}`;
+
+        randomBox.classList.remove("hidden", "shake");
+        void randomBox.offsetWidth;
+        randomBox.classList.add("shake");
+      }
+
+      function updateSuggestionFromSelection() {
+        const selected = selectedMissions();
+
+        if (selected.length < 2) {
+          randomBox.classList.add("hidden");
+          return;
+        }
+
+        const location = $("#location").value;
+
+        // Prefer combos that fit the selected activities.
+        // For ties, favour an idea that suits the chosen location.
+        let bestIdea = null;
+        let bestScore = -1;
+
+        missionIdeas.forEach(idea => {
+          const overlap = idea.missions.filter(mission =>
+            selected.includes(mission)
+          ).length;
+
+          if (overlap < 2) return;
+
+          let score = overlap;
+
+          // Outings are a better fit for an outdoor location.
+          if (
+            location === "Out n about" &&
+            idea.missions.some(mission =>
+              ["Sheffield wander", "Perle Rouge operations",
+               "Beetle spotting / weird field trip"].includes(mission)
+            )
+          ) {
+            score += 0.5;
+          }
+
+          // Home locations favour cosy activities.
+          if (
+            ["El", "Amy"].includes(location) &&
+            idea.missions.some(mission =>
+              ["Cosy sofa time", "Takeaway in bed",
+               "COD Zombies", "Horror movie night",
+               "Twister and blanket shelter"].includes(mission)
+            )
+          ) {
+            score += 0.5;
+          }
+
+          if (score > bestScore) {
+            bestIdea = idea;
+            bestScore = score;
+          }
+        });
+
+        if (bestIdea) {
+          showIdea(bestIdea);
+          return;
+        }
+
+        // No prewritten combo matches? Make a suggestion from her choices.
+        const selectedNames = missionCards
+          .filter(card => selected.includes(card.dataset.mission))
+          .map(card => $(".mission-name", card).textContent.trim());
+
+        showIdea({
+          title: "A LITTLE BIT OF EVERYTHING",
+          message:
+            `So we're thinking ${selectedNames.join(", ").toLowerCase()}. Honestly, that's a pretty good evening. We'll make it up as we go along, inevitably get distracted, and call that the plan.`
+        });
+      }
+
+      function pickRandomIdea() {
+        let index;
+
+        do {
+          index = Math.floor(Math.random() * missionIdeas.length);
+        } while (
+          missionIdeas.length > 1 &&
+          index === lastPlanIndex
+        );
+
+        lastPlanIndex = index;
+        const idea = missionIdeas[index];
+
+        missionCards.forEach(card => {
+          card.setAttribute(
+            "aria-pressed",
+            String(idea.missions.includes(card.dataset.mission))
+          );
+        });
+
+        showIdea(idea);
+        updateSummary();
+        hideFormStatus();
+      }
+
+      $("#randomMissionButton").addEventListener("click", pickRandomIdea);
+
+      $("#clearMissions").addEventListener("click", () => {
+        missionCards.forEach(card => {
+          card.setAttribute("aria-pressed", "false");
+        });
+
+        updateSummary();
+        hideFormStatus();
+
+        $("#randomMissionTitle").textContent = "NOTHING GROWING YET";
+        $("#randomMissionMessage").textContent =
+          "Selections cleared, hit the button for a random combo!";
+        randomBox.classList.add("hidden");
+        randomBox.classList.remove("shake");
+      });
+
+      // Refresh the summary and the suggestion when the plan details change.
+      ["timePreference", "energy", "location"].forEach(id => {
+        document.getElementById(id).addEventListener("change", () => {
+          updateSummary();
+          updateSuggestionFromSelection();
+          hideFormStatus();
+        });
+      });
+
+      ["notes", "senderName"].forEach(id => {
+        document.getElementById(id).addEventListener("input", () => {
+          updateSummary();
+          hideFormStatus();
+        });
+      });
+
+      preferredDate.addEventListener("change", () => {
+        updateSummary();
+        hideFormStatus();
+      });
+
+
+      function buildProposalText() {
+        const name = $("#senderName").value.trim() || "Not specified";
+        const selected = selectedMissions();
+        const mode = getDatePreference();
+
+        const date = mode === "specific" && preferredDate.value
+          ? formatDate(preferredDate.value)
+          : mode === "soon"
+            ? "Sometime soon"
+            : mode === "surprise"
+              ? "You decide"
+              : "Not decided";
+
+        return [
+          "TIME WASTER 3000 — DATE IDEA",
+          `From: ${name}`,
+          `Activities: ${selected.length ? selected.join(", ") : "None selected"}`,
+          `Date preference: ${date}`,
+          `Time: ${$("#timePreference").selectedOptions[0].textContent}`,
+          `Vibe: ${$("#energy").selectedOptions[0].textContent}`,
+          `Location: ${$("#location").selectedOptions[0].textContent}`,
+          `Anything else: ${$("#notes").value.trim() || "Nothing added"}`,
+          "",
+          "This is an idea, not a confirmed plan:))",
+          "Geoff's approval is still pending."
+        ].join("\n");
+      }
+
+      missionForm.addEventListener("submit", async event => {
+        event.preventDefault();
+        hideFormStatus();
+
+        const selected = selectedMissions();
+        const mode = getDatePreference();
+
+        if (!selected.length) {
+          showFormStatus(
+            "PICK A LITTLE SOMETHING FIRST",
+            "Choose at least one activity, or use the idea generator to pick a combination for you.",
+            true
+          );
+          $("#missions").scrollIntoView({ behavior: "smooth", block: "start" });
+          return;
+        }
+
+        if (!mode) {
+          showFormStatus(
+            "WHEN WORKS FOR YOU?",
+            "Choose a specific day, sometime soon, or let me decide. Vague is absolutely fine.",
+            true
+          );
+          $("#date").scrollIntoView({ behavior: "smooth", block: "start" });
+          return;
+        }
+
+        if (mode === "specific" && !preferredDate.value) {
+          showFormStatus(
+            "WHICH DAY?",
+            "Pick a date, or choose one of the less-specific options. No pressure to know yet.",
+            true
+          );
+          preferredDate.focus();
+          return;
+        }
+
+        if (mode === "specific" &&
+            preferredDate.value < localDateString(new Date())) {
+          showFormStatus(
+            "THAT DAY'S ALREADY GONE",
+            "Choose today or a future date instead.",
+            true
+          );
+          preferredDate.focus();
+          return;
+        }
+
+        const formAction = missionForm.getAttribute("action");
+
+        if (!formAction || formAction.includes("YOUR_FORM_ID")) {
+          lastCopyText = buildProposalText();
+          showFormStatus(
+            "ALMOST READY",
+            "The form needs your real Formspree form ID before it can send anything. You can still copy the plan below.",
+            true,
+            true
+          );
+          return;
+        }
+
+        if (!formAction.startsWith("https://formspree.io/f/")) {
+          showFormStatus(
+            "FORM ADDRESS LOOKS WRONG",
+            "Check the Formspree action URL in the HTML and try again.",
+            true
+          );
+          return;
+        }
+
+        const missionField = document.createElement("input");
+        missionField.type = "hidden";
+        missionField.name = "selectedMissions";
+        missionField.value = selected.join(", ");
+        missionForm.appendChild(missionField);
+
+        const dateModeField = document.createElement("input");
+        dateModeField.type = "hidden";
+        dateModeField.name = "datePreference";
+        dateModeField.value = mode;
+        missionForm.appendChild(dateModeField);
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending the little plan...";
+
+        try {
+          const response = await fetch(formAction, {
+            method: "POST",
+            body: new FormData(missionForm),
+            headers: { Accept: "application/json" }
+          });
+
+          if (!response.ok) {
+            let message = "Something went wrong. Check the Formspree setup and try again.";
+
+            try {
+              const result = await response.json();
+              if (result.errors?.length) {
+                message = result.errors.map(error => error.message).join(" ");
+              }
+            } catch (_) {}
+
+            showFormStatus("COULDN'T SEND IT", message, true);
+            return;
+          }
+
+          lastCopyText = buildProposalText();
+
+          showFormStatus(
+            "SENT OVER",
+            "The plan has been sent and has landed in my inbox :)",
+            false,
+            true
+          );
+
+          $("#formStatus").scrollIntoView({
+            behavior: "smooth",
+            block: "nearest"
+          });
+        } catch (_) {
+          lastCopyText = buildProposalText();
+
+          showFormStatus(
+            "NO CONNECTION",
+            "Couldn't reach the form. Check your connection and Formspree setup, or copy the plan and send it another way.",
+            true,
+            true
+          );
+        } finally {
+          missionForm.querySelectorAll(
+            'input[name="selectedMissions"], input[name="datePreference"]'
+          ).forEach(input => input.remove());
+
+          submitButton.disabled = false;
+          submitButton.textContent = "Send over the idea";
+        }
+      });
+
+      $("#copyProposal").addEventListener("click", async () => {
+        if (!lastCopyText) lastCopyText = buildProposalText();
+
+        try {
+          await navigator.clipboard.writeText(lastCopyText);
+          $("#formStatusMessage").textContent =
+            "Copied! Paste it into our chat and let's figure out the details together";
+        } catch (_) {
+          const textarea = document.createElement("textarea");
+          textarea.value = lastCopyText;
+          textarea.setAttribute("readonly", "");
+          textarea.style.position = "fixed";
+          textarea.style.opacity = "0";
+          document.body.appendChild(textarea);
+          textarea.select();
+
+          const copied = document.execCommand("copy");
+          textarea.remove();
+
+          $("#formStatusMessage").textContent = copied
+            ? "Copied! Paste it into our chat and let's figure out the details together"
+            : "Copy was blocked by the browser. You can select and copy the text manually I guess lmao";
+        }
+      });
+
+      function toast(message) {
+        const el = $("#toast");
+        el.textContent = message;
+        el.classList.add("show");
+
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => el.classList.remove("show"), 2600);
+      }
+
+      updateSummary();
+    })();
+  </script>
+</body>
+</html>
