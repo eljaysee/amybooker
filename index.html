@@ -1139,12 +1139,12 @@
         if (!specific) preferredDate.value = "";
 
         $("#dateHelp").textContent = specific
-          ? "Pick a day that works for you. We can always change it."
+          ? "Pick a day that works for you!"
           : mode === "soon"
-            ? "No need to pick a day just yet. We can figure it out together."
+            ? "No need to pick a day just yet. We can figure it out together!"
             : mode === "surprise"
-              ? "Lovely. Someone else gets to make the decision for once."
-              : "Choose an option above if you have a preference.";
+              ? "Lovely!"
+              : "Choose an option above if you have a preference";
 
         updateSummary();
         hideFormStatus();
@@ -1252,10 +1252,10 @@
         };
 
         const timeNotes = {
-          "Afternoon": "A surprisingly civilised start.",
-          "Evening": "An evening of nonsense awaits.",
-          "Late night": "Sleep schedule status: in danger.",
-          "Flexible": ""
+        //   "Afternoon": "A surprisingly civilised start.",
+        //   "Evening": "An evening of nonsense awaits.",
+        //   "Late night": "Sleep schedule status: in danger.",
+        //   "Flexible": ""
         };
 
         return [
